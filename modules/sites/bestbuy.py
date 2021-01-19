@@ -7,12 +7,19 @@ class BestBuy(SiteBase):
 
     def try_buy_item(self) -> bool:
         try:
+            # Refresh and check for add button
             self.driver.refresh()
             cart_button = self.driver.find_element_by_xpath("//button[text()='Add to Cart']")
             cart_button.click()
+            
+            # Notify and maximize cart window
             self.sms.send_alert(f'BEST BUY ITEM ADDED TO CART: {self.url}')
-            # cart_button = self.driver.find_element_by_xpath("//button[text()='Go to Cart']")
-            # cart_button.click()
+            self.driver.get('https://www.bestbuy.com/cart')
+            self.driver.maximize_window()
+            
+            # Checkout click
+            checkout_button = self.driver.find_element_by_xpath("//button[text()='Checkout']")
+            checkout_button.click()
             return True
         except Exception as e:
             print(e)
