@@ -1,0 +1,17 @@
+{
+    "twilio": {
+        "accountSID": "SID",
+        "authToken": "TOKEN",
+        "phoneTo": "+11234567890",
+        "phoneFrom": "+11234567890"
+    },
+    "sites": {
+        "chromeProfile": "C:\\Users\\USER NAME HERE\\AppData\\Local\\Google\\Chrome\\User Data",
+        "bestBuy": {
+            "pollingDelay": 5,
+            "urls": [
+                "https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434"
+            ]
+        }
+    }
+}
